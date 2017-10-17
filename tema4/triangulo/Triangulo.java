@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class Triangulo here.
+ * Clase que implementa in Triángulo 2D a partir de objetos Punto.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author IIP 17-18 (@mrebollo)
+ * @version 1.0
+ * @since 20171017 
  */
 public class Triangulo {
     private Punto v1;  
@@ -23,6 +24,7 @@ public class Triangulo {
         v1 = new Punto(p1_x, p1_y);
         */
         v1 = new Punto(p1.getX(), p1.getY());
+        // Estos vértices hay que reescribirlos como v1
         v2 = p2;
         v3 = p3;
     }
@@ -35,6 +37,7 @@ public class Triangulo {
         v3 = new Punto(x3, y3);
     }
 
+    //Este método debe reescribirse con el nuevo método distancia
     public double perimetro() {
         double lado1 = distancia(v1, v2);
         double lado2 = distancia(v2, v3);
@@ -42,8 +45,8 @@ public class Triangulo {
         return lado1 + lado2 + lado3;
     }
     
+    // Este método debe moverse a la clase Punto
     public double distancia(Punto p1, Punto p2) {
-        p1.setPunto(50,50);
         return Math.sqrt(Math.pow(p2.getX() - p1.getX(), 2) + 
                          Math.pow(p2.getY() - p1.getY(), 2));
     }
