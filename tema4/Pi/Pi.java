@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class Pi here.
+ * Cálculo del valor de PI por el método de Montecarlo.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author IIP 17-18 (@mrebollo)
+ * @version 1.0
+ * @since 20171024
  */
 public class Pi {
    public static void main(){
@@ -18,8 +19,7 @@ public class Pi {
             }
         }
        
-       int puntos = (Punto.totalPuntos()-1);
-       double div = (double)dentro / puntos;
-       System.out.println(4 * div);
+       System.out.println(4 * (double)dentro / (Punto.totalPuntos()-1));
+       Punto.resetTotal();
     }
 }
