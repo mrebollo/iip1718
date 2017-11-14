@@ -12,14 +12,20 @@ public class Pi {
        int dentro = 0;
        Punto centro = new Punto();
        
-       for(int i = 0; i < 1e6; i++){
+       for(int i = 0; i < 1e8; i++){
            Punto p = new Punto(-1, 1);   
            if (p.distancia(centro) <= radio){
                dentro++;
             }
         }
        
+<<<<<<< HEAD
+       int totalPuntos = (Punto.totalPuntos()-1);
+       System.out.println(4 * (double)dentro / totalPuntos);
+       Punto.ponteACeroPorFavor();
+=======
        System.out.println(4 * (double)dentro / (Punto.totalPuntos()-1));
        Punto.resetTotal();
+>>>>>>> 7cdc0b080c0e51ec153536ac1616939d495786e7
     }
 }
