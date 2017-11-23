@@ -11,11 +11,16 @@ public class Binario {
         Scanner teclado = new Scanner(System.in);
         System.out.print("Introduce un número: ");
         int numero = teclado.nextInt();
-        System.out.println( numero + "! = " + dec2bin(numero));
+        System.out.println( numero + " = " + dec2bin(numero));
     }
     
-    private static int dec2bin (int n){
-
-        return 0;
+    private static String dec2bin (int n){
+        String binario = "";
+        int decimal = n;
+        while(decimal > 0){
+            binario = decimal % 2 + binario ;
+            decimal = decimal / 2;
+        }
+        return binario;
     }
 }
