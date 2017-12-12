@@ -39,17 +39,18 @@ public class Triangulo {
 
     //Este método debe reescribirse con el nuevo método distancia
     public double perimetro() {
-        double lado1 = distancia(v1, v2);
-        double lado2 = distancia(v2, v3);
-        double lado3 = distancia(v3, v1);
+        /*
+        double lado1 = v1.distancia(v2);
+        double lado2 = v2.distancia(v3);
+        double lado3 = v3.distancia(v1);
         return lado1 + lado2 + lado3;
+        */
+        return v1.distancia(v2) + v2.distancia(v3) + v3.distancia(v1);
     }
     
-    // Este método debe moverse a la clase Punto
-    public double distancia(Punto p1, Punto p2) {
-        return Math.sqrt(Math.pow(p2.getX() - p1.getX(), 2) + 
-                         Math.pow(p2.getY() - p1.getY(), 2));
+    public String toString() {
+        return v1 + " " + v2 + " " +v3;
     }
     
-    
+   
 }

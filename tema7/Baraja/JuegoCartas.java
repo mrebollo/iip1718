@@ -19,5 +19,20 @@ public class JuegoCartas {
        
        int posCarta = miBaraja.buscarPos(asPicas);
        System.out.println(posCarta);
+       
+       Carta[] mano1, mano2;
+       mano1 = miBaraja.repartir(5);
+       System.out.println(miBaraja);
+       System.out.println("Jugador 1");
+       for(int i = 0; i < mano1.length; i++){
+           System.out.println(mano1[i]);
+        }
+           
+       mano2 = miBaraja.repartir(5);
+       System.out.println("Jugador 2");
+       for(int i = 0; i < mano2.length; i++){
+           System.out.println(mano2[i]);
+        }
+       
     }
 }

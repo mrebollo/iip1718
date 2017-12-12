@@ -7,16 +7,24 @@ import java.util.Scanner;
  */
 public class Tabla {
     public static void main(String[] args){
+        
+        int numero = leerNumero();
+        mostrarTabla(numero);       
+    }
+    
+    private static int leerNumero() {
         Scanner teclado = new Scanner(System.in);
-        int numero;
+        int n;
         do {
             System.out.print("Introduce un número: ");
-            numero = teclado.nextInt();
-        } while ( numero < 1 || numero > 10);
-        
+            n = teclado.nextInt();
+        } while ( n < 1 || n > 10);
+        return n;
+    }
+    
+    private static void mostrarTabla(int n){
         for(int i = 1; i <= 10; i++) {
-            System.out.println(numero +" x " + i + " = " + numero * i);
+            System.out.println(n +" x " + i + " = " + n * i);
         }
-        
     }
 }

@@ -39,7 +39,24 @@ public class Punto {
         y = valorY;
     }
     
+    public double distancia(Punto otroPunto) {
+        return Math.sqrt(Math.pow(otroPunto.getX() - this.x, 2) + 
+                         Math.pow(otroPunto.getY() - this.y, 2));
+    }
+    
     public String toString() {
-        return "(" + x + "," + y + ")"; 
+        return "(" + x + ", " + y + ")"; 
+    }
+    
+    public boolean equals(Object otroPunto){
+        boolean sonIguales = otroPunto instanceof Punto &&
+                             (x == ((Punto)otroPunto).getX()) &&
+                             (y == ((Punto)otroPunto).getY());
+        return sonIguales;
+        /*
+        return otroPunto instanceof Punto &&
+               (x == ((Punto)otroPunto).getX()) &&
+               (y == ((Punto)otroPunto).getY());
+               */
     }
 }

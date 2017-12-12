@@ -8,12 +8,10 @@
 public class PruebaTriangulo {
     public static void main() {
         Punto p1 = new Punto();
-        Punto p2 = new Punto();
-        Punto p3 = new Punto();
-        Triangulo t = new Triangulo();
+        Punto p2 = new Punto(0,1);
+        Punto p3 = new Punto();     
         
-        
-        if (p1.equals(t) || p2 == p3 || p3 == p1){
+        if (p1.equals(p2) || p2.equals(p3) || p3.equals(p1)){
             System.out.println("Triańgulo no válido");
         }
         else {

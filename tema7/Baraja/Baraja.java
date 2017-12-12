@@ -6,15 +6,18 @@
  * @version (a version number or a date)
  */
 public class Baraja {
+    public static final int NUM_CARTAS = 52;
     private Carta[] mazo;
+    private int ultima;
     
     public Baraja(){
-        mazo = new Carta[52];
+        mazo = new Carta[NUM_CARTAS];
         for(int palo = Carta.PICAS; palo <= Carta.DIAMANTES; palo++){
             for(int numero = 0; numero < 13; numero++){
                 mazo[13*palo+numero] = new Carta(numero, palo);
             }
         }
+        ultima = NUM_CARTAS - 1;
     }    
     
     
@@ -58,12 +61,27 @@ public class Baraja {
     
     
     public Carta[] repartir(int n){
-        return null;
+        Carta[] mano = new Carta[n];
+        int j = 0;
+        //for( int i = 0; i < mazo.length; i++){
+        for( int i = ultima; i > ultima - n; i--){
+            mano[j] = mazo[i];
+            mazo[i] = null;
+            j++;
+        }
+        ultima -= n;
+        return mano;
     }
+    
+    
+    public Carta dameUna(){
+        return repartir(1);
+    }
+    
     
     public String toString(){
         String res = "";
-        for(int i = 0; i < mazo.length; i++){
+        for(int i = 0; i < ultima; i++){
             res += mazo[i].toString() + "\n";
         }
         return res;
